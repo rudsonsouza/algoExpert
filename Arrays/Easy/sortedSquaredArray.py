@@ -10,6 +10,7 @@ class Solution(object):
             value = array[idx]
             sortedSquares[idx] = value * value
         sortedSquares.sort()
+        
         return sortedSquares
 
 print(Solution().sortedSquaredArray([1, 2, 3, 5, 6, 8, 9]))
