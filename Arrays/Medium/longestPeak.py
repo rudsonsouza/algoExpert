@@ -1,3 +1,4 @@
+# time O(n) | space O(1)
 class Solution(object):
     def longestPeak(array):
         longestPeakLength = 0
