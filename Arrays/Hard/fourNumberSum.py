@@ -1,4 +1,6 @@
 class Solution(object):
+    # Average: time O(n^2) | space O(n^2)
+    # Worst: time O(n^3) | space O(n^2)
     def fourNumberSum(array, targetSum):
         allPairsSum = {}
         quadruplets = []
