@@ -1,4 +1,5 @@
 class Solution(object):
+    # time O(n) | space O(n)
     def zigzagTraverse(array):
         height = len(array) - 1
         width = len(array[0]) - 1
