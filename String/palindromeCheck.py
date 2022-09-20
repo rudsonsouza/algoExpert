@@ -8,7 +8,7 @@ class Solution:
         for i in reversed(range(len(string))):
             reversedString.append(string[i])
         return string == "".join(reversedString)
-        
+
     def isPalindrome02(string):
         leftIdx = 0
         rightIdx = len(string) - 1
