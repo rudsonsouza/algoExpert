@@ -1,3 +1,5 @@
+# O(w * h) time | O(w * h) space - where w is the
+# width of the matrix and h is the height
 def transposeMatrix(matrix):
     transposedMatrix = []
     for col in range(len(matrix[0])):
