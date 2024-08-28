@@ -60,7 +60,7 @@ static int MaxSubsetSumNoAdjacentMethod(int[] array)
         second = first;
         first = current;
     }
-
+    
     return first;
 }
 
