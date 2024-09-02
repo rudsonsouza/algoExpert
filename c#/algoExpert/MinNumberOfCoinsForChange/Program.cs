@@ -16,6 +16,8 @@ Console.WriteLine("Hello, World!");
 
 int n = 7;
 int[] denoms = new int[] {1, 5, 10};
+var result = MinNumberOfCoinsForChange(n, denoms);
+Console.WriteLine(result);
 
 
 // Time O(nd) | Space O(n)
@@ -29,7 +31,7 @@ static int MinNumberOfCoinsForChange(int n, int[] denoms)
     
     foreach (int denom in denoms)
     {
-        for (int amount = 0; amount <= numOfCoins.Length; amount++)
+        for (int amount = 0; amount < numOfCoins.Length; amount++)
         {
             if (denom <= amount)
             {
