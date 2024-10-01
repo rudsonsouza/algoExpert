@@ -17,6 +17,8 @@
  */
 Console.WriteLine("Hello, World!");
 
+var result = HasSingleCycle(new int[] { 2, 3, 1, -4, -4, 2});
+
 bool HasSingleCycle(int[] array)
 {
     int numElementsVisited = 0;
