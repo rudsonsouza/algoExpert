@@ -28,6 +28,10 @@ var capacityInput = 10;
  * [4, 3]  0  0  1  4  4  5  5  5  5  5  5
  * [5, 6]  0  0  1  4  4  5  5  5  6  9  9
  * [6, 7]  0  0  1  4  4  5  5  6  6  9  10
+ *
+ * formula: values[i][j] = max(values[i - 1][c],
+ *                             values[i - 1][c - w] + v
+ *                            )
  */
 
 var result = KnapsackProblem(itemsInput, capacityInput);
