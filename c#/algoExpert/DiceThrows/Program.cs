@@ -21,6 +21,39 @@ var result = DiceThrows(numDice, numSides, target);
 
 static int DiceThrows(int numDice, int numSides, int target)
 {
+    int[,] storedResults = new int[2, target + 1];
+    storedResults[0, 0] = 1;
+
+    int previousNumDiceIndex = 0;
+    int newNumDiceIndex = 1;
+
+    for (int currentNumDice = 0; currentNumDice < numDice; currentNumDice++)
+    {
+        for (int currentTarget = 0; currentTarget <= target; currentTarget++)
+        {
+            int numWaysToReachTarget = 0;
+            for (int currentNumSides = 1; 
+                 currentNumSides <= Math.Min(currentTarget, numSides); 
+                 currentNumSides++)
+            {
+                numWaysToReachTarget += storedResults[previousNumDiceIndex, currentTarget - currentNumSides];
+            }
+
+            storedResults[newNumDiceIndex, currentTarget] = numWaysToReachTarget;
+        }
+
+        int tempPreviousNumDiceIndex = previousNumDiceIndex;
+        previousNumDiceIndex = newNumDiceIndex;
+        newNumDiceIndex = tempPreviousNumDiceIndex;
+    }
+
+    return storedResults[previousNumDiceIndex, target];
+}
+
+// O(d * s * t) time | O(d * t) space
+/*
+static int DiceThrows(int numDice, int numSides, int target)
+{
     int[,] storedResults = new int[numDice + 1, target + 1];
     storedResults[0, 0] = 1;
 
@@ -42,6 +75,7 @@ static int DiceThrows(int numDice, int numSides, int target)
 
     return storedResults[numDice, target];
 }
+*/
 
 // O(d * s * t) time | O(d * t) space
 /*
